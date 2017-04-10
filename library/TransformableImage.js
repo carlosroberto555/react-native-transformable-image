@@ -19,6 +19,7 @@ export default class TransformableImage extends Component {
       height: PropTypes.number,
     }),
 
+    maxScale: PropTypes.integer,
     enableTransform: PropTypes.bool,
     enableScale: PropTypes.bool,
     enableTranslate: PropTypes.bool,
@@ -28,6 +29,7 @@ export default class TransformableImage extends Component {
   };
 
   static defaultProps = {
+    maxScale: 1,
     enableTransform: true,
     enableScale: true,
     enableTranslate: true
@@ -61,7 +63,7 @@ export default class TransformableImage extends Component {
   }
 
   render() {
-    let maxScale = 1;
+    let maxScale = this.props.maxScale;
     let contentAspectRatio = undefined;
     let width, height; //pixels
 
